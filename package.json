@@ -1,0 +1,29 @@
+{
+  "name": "reactml-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@iconix/reactml": "git://github.com/devpkiconix/reactml.git#npm",
+    "connected-react-router": "4.3.0",
+    "prettier": "^1.14.2",
+    "react": "^16.4.2",
+    "react-app-rewire-yaml": "^1.0.0",
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "5.0.7",
+    "react-router": "4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "recompose": "^0.28.2",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "2.3.0",
+    "typeface-roboto": "0.0.54"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject"
+  }
+}
