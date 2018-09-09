@@ -29,6 +29,37 @@ state:
         done: false
   stateNodeName: playground
 components:
+  Header:
+    styles:
+      root:
+        backgroundColor: lightYellow
+    state-to-props: {}
+    view:
+      tag: div
+      props:
+        className: .classes.root
+      children:
+        - tag: div
+          children:
+            - tag: Link
+              props:
+                to: /reactml/view
+                # onClick: ..gotoRoot
+              content: 'home'
+            - tag: span
+              content: ' | '
+            - tag: Link
+              props:
+                to: /reactml/editor
+                # onClick: ..gotoEditor
+              content: 'editor'
+            - tag: span
+              content: ' | '
+            - tag: Link
+              props:
+                to: /reactml/about
+                # onClick: ..gotoAbout
+              content: 'about'
   Footer:
     view:
       tag: Paper
@@ -49,7 +80,7 @@ components:
         - tag: ReactMLArrayMapper
           props:
             email: .user.email
-            over: .todoList
+            over: .items
             as: todo
             component: ...Todo
   About:
