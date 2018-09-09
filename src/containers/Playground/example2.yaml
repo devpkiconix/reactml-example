@@ -70,8 +70,7 @@ components:
             style:
               color: maroon
               paddingTop: 20px
-          content: "This prototype is rendered from a YML config file. Please see
-          *.yml files in src/containers/Playground folder"
+          content: This is footer
   TodoList:
     state-to-props:
       items: todoList
