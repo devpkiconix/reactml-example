@@ -32,7 +32,7 @@ components:
   Header:
     styles:
       root:
-        backgroundColor: lightYellow
+        backgroundColor: lightBlue
     state-to-props: {}
     view:
       tag: div
