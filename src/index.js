@@ -6,7 +6,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import makeStore, { history } from './store'
 
 import './index.css';
-import App from './App';
+import { YamlApp } from './containers/Playground';
 import registerServiceWorker from './registerServiceWorker';
 
 const target = document.getElementById('root');
@@ -15,7 +15,7 @@ const store = makeStore();
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <App />
+            <YamlApp />
         </ConnectedRouter>
     </Provider>,
     target

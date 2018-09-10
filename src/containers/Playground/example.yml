@@ -28,7 +28,40 @@ state:
         label: sip
         done: false
   stateNodeName: playground
+
 components:
+  App:
+    view:
+      tag: main
+      children:
+        - tag: Header
+        - tag: div
+          children:
+            - tag: Route
+              props:
+                path: /
+                component: ...ReadOnly
+                exact: true
+            - tag: Route
+              props:
+                path: /reactml/view
+                component: ...ReadOnly
+                exact: true
+            - tag: Route
+              props:
+                path: '/reactml/editor'
+                component: ...Editor
+                exact: true
+            - tag: Route
+              props:
+                path: '/reactml/about'
+                component: ...About
+                exact: true
+        #     spec: .spec
+        #     actionLib: .actionLib
+        #     tagFactory: .tagFactory
+        #     stateNodeName: .stateNodeName
+        - tag: Footer
   Header:
     styles:
       root:
@@ -172,7 +205,7 @@ components:
                     item: true
                     xs: 12
                   children:
-                  - tag: Button
+                  - tag: button
                     props:
                       variant: contained
                       color: primary
@@ -180,7 +213,7 @@ components:
                     children:
                     - tag: span
                       content: Save
-                  - tag: Button
+                  - tag: button
                     props:
                       color: secondary
                     #   onClick: myAction
