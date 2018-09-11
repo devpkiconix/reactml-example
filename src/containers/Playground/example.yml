@@ -104,6 +104,19 @@ components:
               paddingTop: 20px
           content: "This prototype is rendered from a YML config file. Please see
           *.yml files in src/containers/Playground folder"
+  Todo:
+    view:
+      tag: 'div'
+      children:
+        -
+          tag: 'input'
+          props:
+            type: 'checkbox'
+            value: '.todo.done'
+            checked: '.todo.done'
+        -
+          tag: 'span'
+          content: '.todo.label'
   TodoList:
     state-to-props:
       items: todoList
@@ -116,6 +129,10 @@ components:
             over: .items
             as: todo
             component: ...Todo
+  Status:
+    view:
+      tag: span
+      content: .status
   About:
     view:
       tag: div

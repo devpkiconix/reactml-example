@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/10.9.0/bin/node /usr/local/bin/yarn
+  /usr/local/Cellar/node/10.9.0/bin/node /usr/local/bin/yarn add --dev why-did-you-update
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin

@@ -25,5 +25,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject"
+  },
+  "devDependencies": {
+    "why-did-you-update": "^0.1.1"
   }
 }
