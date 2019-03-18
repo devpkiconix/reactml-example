@@ -1,0 +1,15 @@
+
+Page = Header, Body, Footer;
+Header = AppbarDemo;
+AppbarDemo =
+	AppBar(position="static")
+	-> Toolbar
+       ->  PageTitle,
+       	   (Button(color="inherit") -> "Login");
+AppbarDemoTitle = h1 -> "Appbar Demo";
+
+PageTitle = Typography(variant="subtitle2" color="inherit")
+       		-> "RTML Demo";
+
+Footer = AppBar(color="secondary" style={"top": "auto", "bottom": 0})  -> Toolbar->Copyright;
+Copyright = Typography(variant="caption" color="inherit") -> "Copyright (c) 2019, Example.com!";

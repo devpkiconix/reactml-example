@@ -1,24 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'connected-react-router'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-import makeStore, { history } from './store'
+// RTML Library
+import { newVocab } from "@iconix/reactml";
+// Bring in Victory charts
+import victoryVocab from "@iconix/reactml/build/curated-vocabs/victory";
 
-import './index.css';
-import { YamlApp } from './containers/Playground';
-import registerServiceWorker from './registerServiceWorker';
+// import material UI component vocab
+import materialVocab from "./lib/material-ui-vocab";
 
-const target = document.getElementById('root');
-const store = makeStore();
+// merged vocabularies
+const vocab = newVocab().merge(victoryVocab).merge(materialVocab);
 
-ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <YamlApp />
-        </ConnectedRouter>
-    </Provider>,
-    target
-)
+// Load RTML files
+const appLoader = require("./app.rtml");
+const contentLoader = require("./content.rtml");
 
-registerServiceWorker();
+// Merge RTML vocabularies
+appLoader(contentLoader(vocab));
+
+// Lookup "Page" component - defined in app.rtml
+const Page = vocab.map("Page");
+
+// Insert into the index.html page
+const wrapper = document.getElementById("main");
+wrapper ? ReactDOM.render(<Page/>, wrapper) : false;
+

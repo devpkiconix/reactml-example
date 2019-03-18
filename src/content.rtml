@@ -1,0 +1,82 @@
+Body = GridDemoTitle, GridDemo;
+GridDemoTitle = Typography(variant="h6") -> "Grid Demo";
+GridDemo = Grid(container=true spacing=24) ->
+	(Grid(item=true xs=6) -> Cell(text="xs=6")),
+	(Grid(item=true xs=6) -> Cell(text="xs=6")),
+	(Grid(item=true xs=12) -> Cell(text="Victory Charts	(in material ui Grid & Paper): ")),
+	(Grid(item=true xs=4) -> PieCard),
+	(Grid(item=true xs=4) -> CandlestickCard),
+	(Grid(item=true xs=4) -> VoronoiCard)
+	;
+
+CardDemo = CardDemoContent;
+CardDemoTitle = h1 -> "Card Demo";
+CardDemoContent1 = Paper -> "Card Demo content here";
+CardDemoContent = Card ->(
+	(Typography(color="textSecondary" gutterBottom=true) ->
+		  "Card (inside grid)"),
+	(Typography(component="h5") -> ("Lorem", "Ipsum") ))
+		  ;
+Cell = Paper(style={"textAlign": "center"}) -> "$p:text";
+Cell2 = Grid(item=true xs="$p:xs") -> Paper-> "$p:text";
+bull = span() -> "...";
+
+
+// Pie uses the VictoryPie component from
+// Victory graphing library
+Pie =
+    VictoryPie(
+        cornerRadius=9
+        padAngle=3
+        data=[
+          { "x": "Cats", "y": 35 },
+          { "x": "Dogs", "y": 40 },
+          { "x": "Birds", "y": 55 }
+        ]
+        animate={"duration": 2000}
+        colorScale=["tomato", "orange", "gold", "cyan", "navy" ]
+    );
+
+Voronoi =
+    VictoryVoronoi(
+      style={ "data": { "stroke": "#642aa1", "strokeWidth": 3 } }
+      data=[
+        { "x": 1, "y": 2 },
+        { "x": 2, "y": 3 },
+        { "x": 3, "y": 5 },
+        { "x": 4, "y": 4 },
+        { "x": 5, "y": 7 }
+      ]);
+
+
+Candlestick =
+    VictoryCandlestick(data=[
+        { "x": 1, "open": 5, "close": 10,  "high": 15, "low": 0 },
+        { "x": 2, "open": 5, "close": 10,  "high": 20, "low": 0 },
+        { "x": 3, "open": 12, "close": 10,  "high": 22, "low": 0 },
+        { "x": 4, "open": 5, "close": 10,  "high": 18, "low": 0 },
+        { "x": 5, "open": 5, "close": 20,  "high": 25, "low": 0 },
+        { "x": 6, "open": 5, "close": 10,  "high": 12, "low": 0 },
+        { "x": 7, "open": 5, "close": 10,  "high": 19, "low": 0 }
+      ]);
+
+PieCard = Card -> (
+	(
+		Typography(color="textSecondary" gutterBottom=true) ->
+		  "Victory Pie"),
+		Pie
+	);
+
+VoronoiCard = Card -> (
+	(
+		Typography(color="textSecondary" gutterBottom=true) ->
+		  "Victory Voronoi"),
+		Voronoi
+	);
+
+CandlestickCard = Card -> (
+	(
+		Typography(color="textSecondary" gutterBottom=true) ->
+		  "Victory Candlestick"),
+		Candlestick
+	);
