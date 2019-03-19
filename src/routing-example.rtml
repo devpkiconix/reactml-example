@@ -1,0 +1,23 @@
+App = AppRoutes;
+AppRoutes =
+  Router -> Menu,
+  	hr,
+	Route(exact=true path="/login" component=$f:LoginPage),
+    Route(path="/dash" component=$f:DashboardPage),
+    Route(path="/cfg" component=$f:CfgAdminPage),
+    Route(path="/devices" component=$f:DeviceAdminPage);
+
+LoginPage = PageTitle(text="Login Page");
+DashboardPage = PageTitle(text="Dashboard Page");
+CfgAdminPage = PageTitle(text="Config Admin Page");
+DeviceAdminPage = PageTitle(text="Device Admin Page");
+
+PageTitle = div -> "$p:text";
+
+Menu = ul(style={"list-style-type": "none", "margin": 0, "padding": 0})
+ -> (
+	(li(style={ "display": "block", "padding": "16px"}) -> Link(to="/login") -> "Login"),
+	(li(style={ "display": "block", "padding": "16px"}) -> Link(to="/dash") -> "Dashboard"),
+	(li(style={ "display": "block", "padding": "16px"}) -> Link(to="/cfg") -> "Config"),
+	(li(style={ "display": "block", "padding": "16px"}) -> Link(to="/devices") -> "Devices")
+ );

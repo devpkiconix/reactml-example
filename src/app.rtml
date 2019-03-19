@@ -1,4 +1,4 @@
-
+App = Page;
 Page = Header, Body, Footer;
 Header = AppbarDemo;
 AppbarDemo =
