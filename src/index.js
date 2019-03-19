@@ -25,10 +25,10 @@ const routingExampleLoader = require("./routing-example.rtml");
 // Merge RTML vocabularies
 
 // Example1:
-appLoader(contentLoader(vocab));
+// appLoader(contentLoader(vocab));
 
 // Example 2:
-// routingExampleLoader(vocab);
+routingExampleLoader(vocab);
 
 // Lookup "App" component - defined in app.rtml
 const App = vocab.map("App");
